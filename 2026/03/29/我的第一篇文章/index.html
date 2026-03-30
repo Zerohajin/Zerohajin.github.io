@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 
-<html theme="dark" showBanner="true" hasBanner="desktop" > 
+<html theme="dark" showBanner="true" hasBanner="true" > 
 <link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet">
 <link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet">
 <link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet">
@@ -20,19 +20,17 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="enumerate函数用来同时获取索引和元素，比如将x&#x3D;[‘a’,’b’]转化为[(0,’a’),(1,’b’)]可以用enumerate()+list()来转换 x&#x3D;[&#39;a&#39;,&#39;b&#39;] result&#x3D;list(enumerate(x))">
+  <meta name="description" content="记录一些本人经常忘记的python函数使用方法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一些Python函数汇总">
 <meta property="og:url" content="https://zerohajin.github.io/2026/03/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/index.html">
 <meta property="og:site_name" content="Levent&#39;s Blog">
-<meta property="og:description" content="enumerate函数用来同时获取索引和元素，比如将x&#x3D;[‘a’,’b’]转化为[(0,’a’),(1,’b’)]可以用enumerate()+list()来转换 x&#x3D;[&#39;a&#39;,&#39;b&#39;] result&#x3D;list(enumerate(x))">
+<meta property="og:description" content="记录一些本人经常忘记的python函数使用方法">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://zerohajin.github.io/images/ag.jpg">
 <meta property="article:published_time" content="2026-03-29T10:00:59.000Z">
-<meta property="article:modified_time" content="2026-03-30T14:01:45.046Z">
+<meta property="article:modified_time" content="2026-03-30T15:28:28.335Z">
 <meta property="article:author" content="Levent">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://zerohajin.github.io/images/ag.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Levent's Blog" type="application/atom+xml">
   
@@ -214,16 +212,6 @@
 <article id="post-我的第一篇文章" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
     
-<div class="article-gallery">
-  <div class="article-gallery-photos">
-    
-      <a class="article-gallery-img" rel="gallery_cuid7Jr0zqmyqeXs1iwrIAQjg">
-        <img src="/images/ag.jpg" itemprop="image">
-      </a>
-    
-  </div>
-</div>
-
    
   <div class="article-inner">
     <div class="article-main">
@@ -253,18 +241,39 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            138 词 
+            1.1k 词 
           </div>
         </div>
         
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <span id="more"></span>  
-<h2 id="enumerate函数"><a href="#enumerate函数" class="headerlink" title="enumerate函数"></a>enumerate函数</h2><p>用来同时获取索引和元素，比如将x&#x3D;[‘a’,’b’]转化为[(0,’a’),(1,’b’)]<br>可以用enumerate()+list()来转换</p>
-<pre><code class="language-python">x=[&#39;a&#39;,&#39;b&#39;]
-result=list(enumerate(x))
-</code></pre>
+          <p>记录一些本人经常忘记的python函数使用方法</p>
+<span id="more"></span>  
+<h2 id="enumerate函数"><a href="#enumerate函数" class="headerlink" title="enumerate函数"></a>enumerate函数</h2><p>用来同时获取索引和元素，比如将<code>x=[&#39;a&#39;,&#39;b&#39;]</code>转化为<code>[(0,&#39;a&#39;),(1,&#39;b&#39;)]</code><br>可以用<code>enumerate()+list()</code>来转换</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x=[<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>]</span><br><span class="line">result=<span class="built_in">list</span>(<span class="built_in">enumerate</span>(x))</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="sort、sorted"><a href="#sort、sorted" class="headerlink" title="sort、sorted"></a>sort、sorted</h2><h3 id="sort函数"><a href="#sort函数" class="headerlink" title="sort函数"></a>sort函数</h3><p>sort函数刚开始默认为：<code>sort(key=None,reverse=False)</code></p>
+<ul>
+<li>key通俗来说就是排序的关键值，比如<code>key=len</code>时就会按照列表中元素的长度排序</li>
+<li>reverse是排序规则，<code>reverse=Ture</code>就是降序排列，而默认情况下（<code>reverse=False</code>）是升序排列<br>比如：</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a=[random.randint(<span class="number">0</span>,<span class="number">100</span>) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">20</span>)]</span><br><span class="line">li1=a[:<span class="number">10</span>]</span><br><span class="line">li1.sort()</span><br><span class="line">li2=a[<span class="number">10</span>:]</span><br><span class="line">li2.sort(reverse=<span class="literal">True</span>)</span><br><span class="line">li=li1+li2</span><br></pre></td></tr></table></figure>
+<h3 id="sorted函数"><a href="#sorted函数" class="headerlink" title="sorted函数"></a>sorted函数</h3><p>sorted函数与sort函数的区别是：sorted会生成一个新的列表，而sort则是在原来的列表上做改动<br>比如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a=[random.randint(<span class="number">0</span>,<span class="number">100</span>) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">20</span>)]</span><br><span class="line">li1=<span class="built_in">sorted</span>(a[:<span class="number">10</span>])</span><br><span class="line">li2=<span class="built_in">sorted</span>(a[<span class="number">10</span>:],reverse=<span class="literal">True</span>)</span><br><span class="line">li=li1+li2</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="zip函数"><a href="#zip函数" class="headerlink" title="zip函数"></a>zip函数</h2><p><code>zip()</code>是python内置的打包函数，用于将多个可迭代对象（列表，元祖等）按位置</p>
+<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><ul>
+<li>配对两个列表</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">b=[<span class="string">&#x27;x&#x27;</span>,<span class="string">&#x27;y&#x27;</span>,<span class="string">&#x27;z&#x27;</span>]</span><br><span class="line">z=<span class="built_in">zip</span>(a,b)</span><br><span class="line"><span class="comment">#生成(1,&#x27;x&#x27;),(2,&#x27;y&#x27;),(3,&#x27;z&#x27;)的可迭代对象</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>转成列表查看结果</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(z)</span><br><span class="line"><span class="comment">#[(1,&#x27;x&#x27;),(2,&#x27;y&#x27;),(3,&#x27;z&#x27;)]</span></span><br></pre></td></tr></table></figure>
+<p><strong>注意：如果两个长度不同，只能匹配最小长度</strong></p>
+<h3 id="与dict合用"><a href="#与dict合用" class="headerlink" title="与dict合用"></a>与dict合用</h3><p><code>zip()</code>还可以配合<code>dict()</code>生成字典，具体如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">keys=[<span class="string">&#x27;k1&#x27;</span>,<span class="string">&#x27;k2&#x27;</span>]</span><br><span class="line">values=[<span class="string">&#x27;v1&#x27;</span>,<span class="string">&#x27;v2&#x27;</span>]</span><br><span class="line"><span class="built_in">dict</span>(<span class="built_in">zip</span>(keys,values))</span><br><span class="line"><span class="comment">#&#123;&#x27;k1&#x27;:&#x27;v1&#x27;,&#x27;k2&#x27;:&#x27;v2&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
 
         
       </div>
