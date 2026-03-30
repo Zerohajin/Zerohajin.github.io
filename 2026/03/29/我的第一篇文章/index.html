@@ -20,15 +20,15 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="enumerate函数用来同时获取索引和元素，比如将x&#x3D;[‘a’,’b’]转化为[(0,’a’),(1,’b’)]可以用enumerate()+list()来转换 12x&#x3D;[&#x27;a&#x27;,&#x27;b&#x27;]result&#x3D;list(enumerate(x))">
+  <meta name="description" content="enumerate函数用来同时获取索引和元素，比如将x&#x3D;[‘a’,’b’]转化为[(0,’a’),(1,’b’)]可以用enumerate()+list()来转换 x&#x3D;[&#39;a&#39;,&#39;b&#39;] result&#x3D;list(enumerate(x)) &#96;&#96;&#96;bash">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一些Python函数汇总">
 <meta property="og:url" content="https://zerohajin.github.io/2026/03/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/index.html">
 <meta property="og:site_name" content="Levent&#39;s Blog">
-<meta property="og:description" content="enumerate函数用来同时获取索引和元素，比如将x&#x3D;[‘a’,’b’]转化为[(0,’a’),(1,’b’)]可以用enumerate()+list()来转换 12x&#x3D;[&#x27;a&#x27;,&#x27;b&#x27;]result&#x3D;list(enumerate(x))">
+<meta property="og:description" content="enumerate函数用来同时获取索引和元素，比如将x&#x3D;[‘a’,’b’]转化为[(0,’a’),(1,’b’)]可以用enumerate()+list()来转换 x&#x3D;[&#39;a&#39;,&#39;b&#39;] result&#x3D;list(enumerate(x)) &#96;&#96;&#96;bash">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-03-29T10:00:59.000Z">
-<meta property="article:modified_time" content="2026-03-30T13:40:21.164Z">
+<meta property="article:modified_time" content="2026-03-30T13:46:07.584Z">
 <meta property="article:author" content="Levent">
 <meta name="twitter:card" content="summary">
   
@@ -241,7 +241,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            144 词 
+            145 词 
           </div>
         </div>
         
@@ -249,8 +249,12 @@
       <div class="e-content article-entry" itemprop="articleBody">
         
           <span id="more"></span>  
-<h3 id="enumerate函数"><a href="#enumerate函数" class="headerlink" title="enumerate函数"></a>enumerate函数</h3><p>用来同时获取索引和元素，比如将x&#x3D;[‘a’,’b’]转化为[(0,’a’),(1,’b’)]<br>可以用enumerate()+list()来转换</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x=[<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>]</span><br><span class="line">result=<span class="built_in">list</span>(<span class="built_in">enumerate</span>(x))</span><br></pre></td></tr></table></figure>
+<h2 id="enumerate函数"><a href="#enumerate函数" class="headerlink" title="enumerate函数"></a>enumerate函数</h2><p>用来同时获取索引和元素，比如将x&#x3D;[‘a’,’b’]转化为[(0,’a’),(1,’b’)]<br>可以用enumerate()+list()来转换</p>
+<pre><code class="language-python">x=[&#39;a&#39;,&#39;b&#39;]
+result=list(enumerate(x))
+```bash
+</code></pre>
+
         
       </div>
 
