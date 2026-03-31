@@ -28,7 +28,7 @@
 <meta property="og:description" content="记录一些本人经常忘记的python函数使用方法">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-03-29T10:00:59.000Z">
-<meta property="article:modified_time" content="2026-03-30T15:28:28.335Z">
+<meta property="article:modified_time" content="2026-03-31T04:58:42.617Z">
 <meta property="article:author" content="Levent">
 <meta name="twitter:card" content="summary">
   
@@ -241,7 +241,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            1.1k 词 
+            1.6k 词 
           </div>
         </div>
         
@@ -274,6 +274,16 @@
 <p><strong>注意：如果两个长度不同，只能匹配最小长度</strong></p>
 <h3 id="与dict合用"><a href="#与dict合用" class="headerlink" title="与dict合用"></a>与dict合用</h3><p><code>zip()</code>还可以配合<code>dict()</code>生成字典，具体如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">keys=[<span class="string">&#x27;k1&#x27;</span>,<span class="string">&#x27;k2&#x27;</span>]</span><br><span class="line">values=[<span class="string">&#x27;v1&#x27;</span>,<span class="string">&#x27;v2&#x27;</span>]</span><br><span class="line"><span class="built_in">dict</span>(<span class="built_in">zip</span>(keys,values))</span><br><span class="line"><span class="comment">#&#123;&#x27;k1&#x27;:&#x27;v1&#x27;,&#x27;k2&#x27;:&#x27;v2&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="isdigit-、isalpha"><a href="#isdigit-、isalpha" class="headerlink" title="isdigit()、isalpha()"></a>isdigit()、isalpha()</h2><h3 id="isdigit"><a href="#isdigit" class="headerlink" title="isdigit()"></a>isdigit()</h3><p>作用：检测字符串是否全部是由数字字符组成的,返回值为True或False<br>规则：</p>
+<ul>
+<li>对单个字符判断时，’0’-‘9’返回True，其它返回False</li>
+<li>对一整个字符串判断时，只有所有字符都是数字字符时才返回True</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#对单个字符判断</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;5&#x27;</span>.isdigit()) <span class="comment">#True</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;a&#x27;</span>.isdigit()) <span class="comment">#False</span></span><br><span class="line"><span class="comment">#整个字符串判断</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;asd3423&#x27;</span>.isdigit()) <span class="comment">#False</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;3242342&#x27;</span>.isdigit()) <span class="comment">#True</span></span><br></pre></td></tr></table></figure>
+<h3 id="isalpha"><a href="#isalpha" class="headerlink" title="isalpha()"></a>isalpha()</h3><p>作用：检测字符串是否全部由字母字符组成，返回值为True或False<br>规则和<code>isdigit()</code>一样，这里就不赘述了</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;A&#x27;</span>.isalpha()) <span class="comment">#True</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;是&#x27;</span>.isalpha()) <span class="comment">#False</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;sfsef324&#x27;</span>.isalpha()) <span class="comment">#False</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;asdfasd&#x27;</span>.isalpha()) <span class="comment">#True</span></span><br></pre></td></tr></table></figure>
+
 
         
       </div>
