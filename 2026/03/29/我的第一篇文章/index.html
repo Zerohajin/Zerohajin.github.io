@@ -20,15 +20,15 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="记录一些本人经常忘记的python函数使用方法">
+  <meta name="description" content="记录一些基础的python函数或者python用法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一些Python函数汇总">
 <meta property="og:url" content="https://zerohajin.github.io/2026/03/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/index.html">
 <meta property="og:site_name" content="Levent&#39;s Blog">
-<meta property="og:description" content="记录一些本人经常忘记的python函数使用方法">
+<meta property="og:description" content="记录一些基础的python函数或者python用法">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-03-29T10:00:59.000Z">
-<meta property="article:modified_time" content="2026-03-31T06:06:18.186Z">
+<meta property="article:modified_time" content="2026-04-02T01:18:28.839Z">
 <meta property="article:author" content="Levent">
 <meta name="twitter:card" content="summary">
   
@@ -253,14 +253,14 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            1.7k 词 
+            2.4k 词 
           </div>
         </div>
         
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <p>记录一些本人经常忘记的python函数使用方法</p>
+          <p>记录一些基础的python函数或者python用法</p>
 <span id="more"></span>  
 <h2 id="enumerate函数"><a href="#enumerate函数" class="headerlink" title="enumerate函数"></a>enumerate函数</h2><p>用来同时获取索引和元素，比如将<code>x=[&#39;a&#39;,&#39;b&#39;]</code>转化为<code>[(0,&#39;a&#39;),(1,&#39;b&#39;)]</code><br>可以用<code>enumerate()+list()</code>来转换</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x=[<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>]</span><br><span class="line">result=<span class="built_in">list</span>(<span class="built_in">enumerate</span>(x))</span><br></pre></td></tr></table></figure>
@@ -295,7 +295,12 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#对单个字符判断</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;5&#x27;</span>.isdigit()) <span class="comment">#True</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;a&#x27;</span>.isdigit()) <span class="comment">#False</span></span><br><span class="line"><span class="comment">#整个字符串判断</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;asd3423&#x27;</span>.isdigit()) <span class="comment">#False</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;3242342&#x27;</span>.isdigit()) <span class="comment">#True</span></span><br></pre></td></tr></table></figure>
 <h3 id="isalpha"><a href="#isalpha" class="headerlink" title="isalpha()"></a>isalpha()</h3><p>作用：检测字符串是否全部由字母字符组成，返回值为True或False<br>规则和<code>isdigit()</code>一样，这里就不赘述了<br><strong>需要注意的是这个函数也识别中文字符</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;A&#x27;</span>.isalpha()) <span class="comment">#True</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;是&#x27;</span>.isalpha()) <span class="comment">#True</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;sfsef324&#x27;</span>.isalpha()) <span class="comment">#False</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;asdfasd&#x27;</span>.isalpha()) <span class="comment">#True</span></span><br></pre></td></tr></table></figure>
-
+<hr>
+<h2 id="split（）、join（）"><a href="#split（）、join（）" class="headerlink" title="split（）、join（）"></a>split（）、join（）</h2><p>这两个是字符串常见的核心用法，作用是相反的</p>
+<h3 id="split（）"><a href="#split（）" class="headerlink" title="split（）"></a>split（）</h3><p>作用：把一个字符串拆成多个元素的列表<br>语法：<br><code>字符串.split（分隔符，最大拆分次数）</code><br>返回值-&gt;列表，常见样例如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1.默认按空格拆分</span></span><br><span class="line">s=<span class="string">&quot;hello world python&quot;</span></span><br><span class="line"><span class="built_in">print</span>(s.split())</span><br><span class="line"><span class="comment">#[&#x27;hello&#x27;,&#x27;world&#x27;,&#x27;python&#x27;]</span></span><br><span class="line"><span class="comment">#2.按指定符号拆分</span></span><br><span class="line">s=<span class="string">&quot;a,b,c,d&quot;</span></span><br><span class="line"><span class="built_in">print</span>(s.split(<span class="string">&quot;,&quot;</span>))</span><br><span class="line"><span class="comment">#[&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;,&#x27;d&#x27;]</span></span><br><span class="line"><span class="comment">#3.限制拆分次数</span></span><br><span class="line">s=<span class="string">&quot;1-2-3-4-5&quot;</span></span><br><span class="line"><span class="built_in">print</span>(s,split(<span class="string">&quot;-&quot;</span>,<span class="number">2</span>))</span><br><span class="line"><span class="comment">#[&#x27;1&#x27;,&#x27;2&#x27;,&#x27;3-4-5&#x27;]</span></span><br></pre></td></tr></table></figure>
+<h3 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h3><p>作用：把列表&#x2F;元祖等里面的元素拼成一个字符串<br>语法：<br><code>连接符.join(可迭代对象)</code><br>返回值-&gt;新字符串<br>样例如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">lst=[<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>]</span><br><span class="line"><span class="comment">#用逗号拼接</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;,&quot;</span>.join(lst))</span><br><span class="line"><span class="comment">#a,b,c</span></span><br><span class="line"><span class="comment">#用空格拼接</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot; &quot;</span>.join(lst))</span><br><span class="line"><span class="comment">#a b c</span></span><br><span class="line"><span class="comment">#用空字符串拼接（无缝衔接）</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>.join(lst))</span><br><span class="line"><span class="comment">#abc</span></span><br></pre></td></tr></table></figure>
 
         
       </div>
