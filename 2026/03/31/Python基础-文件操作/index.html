@@ -29,7 +29,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://zerohajin.github.io/images/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C.jpg">
 <meta property="article:published_time" content="2026-03-31T11:56:01.000Z">
-<meta property="article:modified_time" content="2026-03-31T12:49:10.892Z">
+<meta property="article:modified_time" content="2026-04-02T02:46:09.825Z">
 <meta property="article:author" content="Levent">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://zerohajin.github.io/images/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C.jpg">
@@ -255,7 +255,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            500 词 
+            771 词 
           </div>
         </div>
         
@@ -273,7 +273,65 @@
 <li><code>../data/c.txt</code>表示上一级的data文件夹里的c.txt</li>
 </ul>
 <p>只需要记住<code>../</code>指的是退出这个文件夹，比如下图中正在运行的是<code>py字符串.py</code>,那么<code>python序列.py</code>这个文件就可以直接表示为<code>python序列.py</code>或者<code>./python序列.py</code><br>如果要访问aaa这个文件夹里的a.py文件,就要先退出当前文件夹，然后进入a.py文件，路径就是<code>../aaa/a.py</code><br><img src="/images/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C.jpg"><br>2.绝对路径<br>绝对路径指的是从磁盘根目录开始查找的路径，比如C盘，D盘，E盘，F盘等，比如<code>C:/sylar/xxx.txt</code></p>
-<h4 id="mode"><a href="#mode" class="headerlink" title="mode"></a>mode</h4>
+<h4 id="mode"><a href="#mode" class="headerlink" title="mode"></a>mode</h4><p>mode是字符串参数，由操作类型（<code>r/w/a/x</code>）+数据类型（<code>t/b</code>）组成的，默认值是<strong>rt（只读文本）</strong><br>1.核心操作类型(必选一个)</p>
+<table>
+<thead>
+<tr>
+<th align="center">模式</th>
+<th align="center">英文全称</th>
+<th align="center">作用</th>
+<th align="center">关键特性</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">r</td>
+<td align="center">read</td>
+<td align="center">只读</td>
+<td align="center">文件必须存在，不然会报错</td>
+</tr>
+<tr>
+<td align="center">w</td>
+<td align="center">write</td>
+<td align="center">只写</td>
+<td align="center">文件不存在就创建，存在就清空原来的所有内容</td>
+</tr>
+<tr>
+<td align="center">a</td>
+<td align="center">append</td>
+<td align="center">追加</td>
+<td align="center">文件不存在就创建，存在就写入内容到文件末尾</td>
+</tr>
+<tr>
+<td align="center">x</td>
+<td align="center">exclusive</td>
+<td align="center">独占创建</td>
+<td align="center">文件不存在就创建，存在直接报错</td>
+</tr>
+</tbody></table>
+<p>2.数据类型（可选，默认t）</p>
+<table>
+<thead>
+<tr>
+<th align="center">模式</th>
+<th align="center">英文全称</th>
+<th align="center">作用</th>
+<th align="center">适用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">t</td>
+<td align="center">text</td>
+<td align="center">文本模式</td>
+<td align="center">读写字符串(文字、代码、配置文件等)</td>
+</tr>
+<tr>
+<td align="center">b</td>
+<td align="center">binary</td>
+<td align="center">二进制模式</td>
+<td align="center">读写非文本文件(图片、视频、音频、压缩包等)</td>
+</tr>
+</tbody></table>
+
         
       </div>
 
