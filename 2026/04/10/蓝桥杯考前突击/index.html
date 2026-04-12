@@ -14,25 +14,25 @@
   
 
   
-  <title>蓝桥杯考前突击 | Levent&#39;s Blog</title>
+  <title>蓝桥杯考前突击 | Zero&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="蓝桥杯倒计时1天，梳理一下c++ B组经常考的简单算法，动态规划的几种模型、bfs、简单图论、数论、二分">
+  <meta name="description" content="蓝桥杯倒计时1天，梳理一下c++ B组经常考的简单算法，动态规划的几种模型、bfs、简单图论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="蓝桥杯考前突击">
 <meta property="og:url" content="https://zerohajin.github.io/2026/04/10/%E8%93%9D%E6%A1%A5%E6%9D%AF%E8%80%83%E5%89%8D%E7%AA%81%E5%87%BB/index.html">
-<meta property="og:site_name" content="Levent&#39;s Blog">
-<meta property="og:description" content="蓝桥杯倒计时1天，梳理一下c++ B组经常考的简单算法，动态规划的几种模型、bfs、简单图论、数论、二分">
+<meta property="og:site_name" content="Zero&#39;s Blog">
+<meta property="og:description" content="蓝桥杯倒计时1天，梳理一下c++ B组经常考的简单算法，动态规划的几种模型、bfs、简单图论">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-04-10T11:14:42.000Z">
-<meta property="article:modified_time" content="2026-04-10T16:27:36.348Z">
-<meta property="article:author" content="Levent">
+<meta property="article:modified_time" content="2026-04-12T08:28:35.365Z">
+<meta property="article:author" content="Zerohajin">
 <meta name="twitter:card" content="summary">
   
-    <link rel="alternate" href="/atom.xml" title="Levent's Blog" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Zero's Blog" type="application/atom+xml">
   
   
     <link rel="icon" media="(prefers-color-scheme: light)" href="/images/favicon-light-32.png" sizes="32x32">
@@ -71,7 +71,7 @@
         <div class="dot"></div>
         <div class="dot"></div>
       </div>
-      <div>Levent's Blog </div>
+      <div>Zero's Blog </div>
     </a>
   </nav>
   <nav id="main-nav">
@@ -297,7 +297,7 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <p>蓝桥杯倒计时1天，梳理一下c++ B组经常考的简单算法，动态规划的几种模型、bfs、简单图论、数论、二分</p>
+          <p>蓝桥杯倒计时1天，梳理一下c++ B组经常考的简单算法，动态规划的几种模型、bfs、简单图论</p>
 <span id="more"></span>
 <h1 id="动态规划（dp）"><a href="#动态规划（dp）" class="headerlink" title="动态规划（dp）"></a>动态规划（dp）</h1><p>动态规划的核心是把一个问题拆分，对于每一个小问题，只考虑当前状态（ps：最好不要刨根问底，考虑当前状态就行了）<br>接下来是几种常见的dp模型</p>
 <h2 id="01背包"><a href="#01背包" class="headerlink" title="01背包"></a>01背包</h2><h3 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h3><p>有n个物品，每个物品的重量是w[i],价值是v[i],背包容量是m<br>问：把物品装进背包里，怎么选才能然背包里的东西价值最大并且不超过背包容量？</p>
