@@ -20,16 +20,16 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="python中的文件操作:open()">
+  <meta name="description" content="python中的文件操作">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python基础-文件基础操作（重点）">
 <meta property="og:url" content="https://zerohajin.github.io/2026/04/04/Python%E5%9F%BA%E7%A1%80-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="Zero&#39;s Blog">
-<meta property="og:description" content="python中的文件操作:open()">
+<meta property="og:description" content="python中的文件操作">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://zerohajin.github.io/images/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C.jpg">
 <meta property="article:published_time" content="2026-04-04T04:30:01.000Z">
-<meta property="article:modified_time" content="2026-04-04T05:12:04.300Z">
+<meta property="article:modified_time" content="2026-04-15T13:33:38.002Z">
 <meta property="article:author" content="Zerohajin">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://zerohajin.github.io/images/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C.jpg">
@@ -282,7 +282,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            1.1k 词 
+            2.1k 词 
           </div>
           
           <!-- 👇 只在文章详情页显示阅读量，首页不显示（解决错乱） -->
@@ -299,7 +299,7 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <p>python中的文件操作:open()</p>
+          <p>python中的文件操作</p>
 <span id="more"></span>
 <h2 id="打开文件：open（）"><a href="#打开文件：open（）" class="headerlink" title="打开文件：open（）"></a>打开文件：<code>open（）</code></h2><p>打开文件之后，会根据你给的mode（模式）的不同来进行不同的操作，open的参数如下：<br><strong><code>open(文件路径,mode=&quot;你要干啥&quot;,encoding=&quot;文件的编码格式&quot;)</code></strong></p>
 <h4 id="文件路径"><a href="#文件路径" class="headerlink" title="文件路径"></a>文件路径</h4><p>文件路径主要分为两种：<br>1.相对路径<br>在python中，相对路径是以<strong>当前正在运行</strong>的py文件所在的文件夹为基准的<br>常用写法：</p>
@@ -399,7 +399,18 @@
 <li>windows默认编码：<code>gbk</code>,MAC&#x2F;Linu默认编码：<code>utf-8</code></li>
 <li>不指定encoding时，python会用系统默认编码，建议手动指定utf-8</li>
 </ul>
-<h2 id="文件对象的核心读写方法"><a href="#文件对象的核心读写方法" class="headerlink" title="文件对象的核心读写方法"></a>文件对象的核心读写方法</h2>
+<h2 id="文件操作写法"><a href="#文件操作写法" class="headerlink" title="文件操作写法"></a>文件操作写法</h2><p>推荐用with语句，它会在代码结束后自动关闭文件，防止资源泄露</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1.读取全部内容</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;example.txt&#x27;</span>,<span class="string">&#x27;r&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    content=f.read()</span><br><span class="line"><span class="comment">#2.按行读取（适合大型文件）</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;example.txt&#x27;</span>,<span class="string">&#x27;r&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">        <span class="built_in">print</span>(line.strip())</span><br><span class="line"><span class="comment">#3.写入(会清空原文件)</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;output.txt&#x27;</span>,<span class="string">&#x27;w&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(<span class="string">&#x27;hello,world!\n&#x27;</span>)</span><br><span class="line">    f.writelines([<span class="string">&#x27;第一行\n&#x27;</span>,<span class="string">&#x27;第二行\n&#x27;</span>])</span><br></pre></td></tr></table></figure>
+<p><strong>关于strip()</strong>:</p>
+<ul>
+<li>line读取文件时，末尾会包含一个换行符<code>\n</code>(比如”Hello\n”)</li>
+<li>使用<code>.strip()</code>后，会得到<code>&quot;Hello&quot;()</code>(去掉了换行符)</li>
+<li>如果行首或者行尾有空格，也会一并去掉</li>
+</ul>
+<p><strong><code>.write()</code>和<code>.writelines()</code>的区别</strong>:<code>.writelines()</code>可以批量写入多个字符串</p>
+<h2 id="路径处理"><a href="#路径处理" class="headerlink" title="路径处理"></a>路径处理</h2><p>可以用<code>pathlib</code>(Python3.4+内置)，代码更清晰，跨平台兼容更好</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line"></span><br><span class="line"><span class="comment">#获取当前文件所在目录</span></span><br><span class="line">base_dir=Path(_file_).parent</span><br><span class="line"><span class="comment">#在_file_处填入当前Python脚本文件的路径，就能获取当前文件的父目录</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#拼接路径（Windows下自动用\，Linux/Mac下自动用/）</span></span><br><span class="line">file_path = base_dir / <span class="string">&#x27;subfolder&#x27;</span> / <span class="string">&#x27;data.txt&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 判断是否存在 / 创建文件夹</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> file_path.parent.exists():</span><br><span class="line">    file_path.parent.mkdir(parents=<span class="literal">True</span>, exist_ok=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取文本</span></span><br><span class="line">text = file_path.read_text(encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
         
       </div>
 
