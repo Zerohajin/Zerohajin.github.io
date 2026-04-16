@@ -14,21 +14,21 @@
   
 
   
-  <title>一些Python函数汇总 | Zero&#39;s Blog</title>
+  <title>Python文件操作——第三方库 | Zero&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="记录一些基础的python函数或者python用法">
+  <meta name="description" content="Python文件操作中常用的第三方库">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一些Python函数汇总">
-<meta property="og:url" content="https://zerohajin.github.io/2026/03/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/index.html">
+<meta property="og:title" content="Python文件操作——第三方库">
+<meta property="og:url" content="https://zerohajin.github.io/2026/04/16/Python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/index.html">
 <meta property="og:site_name" content="Zero&#39;s Blog">
-<meta property="og:description" content="记录一些基础的python函数或者python用法">
+<meta property="og:description" content="Python文件操作中常用的第三方库">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-03-29T10:00:59.000Z">
-<meta property="article:modified_time" content="2026-04-02T01:18:28.839Z">
+<meta property="article:published_time" content="2026-04-16T11:46:27.000Z">
+<meta property="article:modified_time" content="2026-04-16T12:44:01.363Z">
 <meta property="article:author" content="Zerohajin">
 <meta name="twitter:card" content="summary">
   
@@ -248,7 +248,7 @@
        
 
 
-<article id="post-我的第一篇文章" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-Python文件操作——第三方库" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
     
    
@@ -261,7 +261,7 @@
   
     
       <h1 class="p-name article-title" itemprop="headline name">
-        一些Python函数汇总
+        Python文件操作——第三方库
       </h1>
     
   
@@ -269,7 +269,7 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2026-03-29T10:00:59.000Z" itemprop="datePublished">2026-03-29</time>
+  <time class="dt-published" datetime="2026-04-16T11:46:27.000Z" itemprop="datePublished">2026-04-16</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
@@ -280,7 +280,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            2.4k 词 
+            2k 词 
           </div>
           
           <!-- 👇 只在文章详情页显示阅读量，首页不显示（解决错乱） -->
@@ -297,48 +297,31 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <p>记录一些基础的python函数或者python用法</p>
-<span id="more"></span>  
-<h2 id="enumerate函数"><a href="#enumerate函数" class="headerlink" title="enumerate函数"></a>enumerate函数</h2><p>用来同时获取索引和元素，比如将<code>x=[&#39;a&#39;,&#39;b&#39;]</code>转化为<code>[(0,&#39;a&#39;),(1,&#39;b&#39;)]</code><br>可以用<code>enumerate()+list()</code>来转换</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x=[<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>]</span><br><span class="line">result=<span class="built_in">list</span>(<span class="built_in">enumerate</span>(x))</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="sort、sorted"><a href="#sort、sorted" class="headerlink" title="sort、sorted"></a>sort、sorted</h2><h3 id="sort函数"><a href="#sort函数" class="headerlink" title="sort函数"></a>sort函数</h3><p>sort函数刚开始默认为：<code>sort(key=None,reverse=False)</code></p>
-<ul>
-<li>key通俗来说就是排序的关键值，比如<code>key=len</code>时就会按照列表中元素的长度排序</li>
-<li>reverse是排序规则，<code>reverse=Ture</code>就是降序排列，而默认情况下（<code>reverse=False</code>）是升序排列<br>比如：</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a=[random.randint(<span class="number">0</span>,<span class="number">100</span>) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">20</span>)]</span><br><span class="line">li1=a[:<span class="number">10</span>]</span><br><span class="line">li1.sort()</span><br><span class="line">li2=a[<span class="number">10</span>:]</span><br><span class="line">li2.sort(reverse=<span class="literal">True</span>)</span><br><span class="line">li=li1+li2</span><br></pre></td></tr></table></figure>
-<h3 id="sorted函数"><a href="#sorted函数" class="headerlink" title="sorted函数"></a>sorted函数</h3><p>sorted函数与sort函数的区别是：sorted会生成一个新的列表，而sort则是在原来的列表上做改动<br>比如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a=[random.randint(<span class="number">0</span>,<span class="number">100</span>) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">20</span>)]</span><br><span class="line">li1=<span class="built_in">sorted</span>(a[:<span class="number">10</span>])</span><br><span class="line">li2=<span class="built_in">sorted</span>(a[<span class="number">10</span>:],reverse=<span class="literal">True</span>)</span><br><span class="line">li=li1+li2</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="zip函数"><a href="#zip函数" class="headerlink" title="zip函数"></a>zip函数</h2><p><code>zip()</code>是python内置的打包函数，用于将多个可迭代对象（列表，元祖等）按位置</p>
-<h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><ul>
-<li>配对两个列表</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">b=[<span class="string">&#x27;x&#x27;</span>,<span class="string">&#x27;y&#x27;</span>,<span class="string">&#x27;z&#x27;</span>]</span><br><span class="line">z=<span class="built_in">zip</span>(a,b)</span><br><span class="line"><span class="comment">#生成(1,&#x27;x&#x27;),(2,&#x27;y&#x27;),(3,&#x27;z&#x27;)的可迭代对象</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>转成列表查看结果</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(z)</span><br><span class="line"><span class="comment">#[(1,&#x27;x&#x27;),(2,&#x27;y&#x27;),(3,&#x27;z&#x27;)]</span></span><br></pre></td></tr></table></figure>
-<p><strong>注意：如果两个长度不同，只能匹配最小长度</strong></p>
-<h3 id="与dict合用"><a href="#与dict合用" class="headerlink" title="与dict合用"></a>与dict合用</h3><p><code>zip()</code>还可以配合<code>dict()</code>生成字典，具体如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">keys=[<span class="string">&#x27;k1&#x27;</span>,<span class="string">&#x27;k2&#x27;</span>]</span><br><span class="line">values=[<span class="string">&#x27;v1&#x27;</span>,<span class="string">&#x27;v2&#x27;</span>]</span><br><span class="line"><span class="built_in">dict</span>(<span class="built_in">zip</span>(keys,values))</span><br><span class="line"><span class="comment">#&#123;&#x27;k1&#x27;:&#x27;v1&#x27;,&#x27;k2&#x27;:&#x27;v2&#x27;&#125;</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="isdigit-、isalpha"><a href="#isdigit-、isalpha" class="headerlink" title="isdigit()、isalpha()"></a>isdigit()、isalpha()</h2><h3 id="isdigit"><a href="#isdigit" class="headerlink" title="isdigit()"></a>isdigit()</h3><p>作用：检测字符串是否全部是由数字字符组成的,返回值为True或False<br>规则：</p>
-<ul>
-<li>对单个字符判断时，’0’-‘9’返回True，其它返回False</li>
-<li>对一整个字符串判断时，只有所有字符都是数字字符时才返回True</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#对单个字符判断</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;5&#x27;</span>.isdigit()) <span class="comment">#True</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;a&#x27;</span>.isdigit()) <span class="comment">#False</span></span><br><span class="line"><span class="comment">#整个字符串判断</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;asd3423&#x27;</span>.isdigit()) <span class="comment">#False</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;3242342&#x27;</span>.isdigit()) <span class="comment">#True</span></span><br></pre></td></tr></table></figure>
-<h3 id="isalpha"><a href="#isalpha" class="headerlink" title="isalpha()"></a>isalpha()</h3><p>作用：检测字符串是否全部由字母字符组成，返回值为True或False<br>规则和<code>isdigit()</code>一样，这里就不赘述了<br><strong>需要注意的是这个函数也识别中文字符</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;A&#x27;</span>.isalpha()) <span class="comment">#True</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;是&#x27;</span>.isalpha()) <span class="comment">#True</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;sfsef324&#x27;</span>.isalpha()) <span class="comment">#False</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;asdfasd&#x27;</span>.isalpha()) <span class="comment">#True</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="split（）、join（）"><a href="#split（）、join（）" class="headerlink" title="split（）、join（）"></a>split（）、join（）</h2><p>这两个是字符串常见的核心用法，作用是相反的</p>
-<h3 id="split（）"><a href="#split（）" class="headerlink" title="split（）"></a>split（）</h3><p>作用：把一个字符串拆成多个元素的列表<br>语法：<br><code>字符串.split（分隔符，最大拆分次数）</code><br>返回值-&gt;列表，常见样例如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1.默认按空格拆分</span></span><br><span class="line">s=<span class="string">&quot;hello world python&quot;</span></span><br><span class="line"><span class="built_in">print</span>(s.split())</span><br><span class="line"><span class="comment">#[&#x27;hello&#x27;,&#x27;world&#x27;,&#x27;python&#x27;]</span></span><br><span class="line"><span class="comment">#2.按指定符号拆分</span></span><br><span class="line">s=<span class="string">&quot;a,b,c,d&quot;</span></span><br><span class="line"><span class="built_in">print</span>(s.split(<span class="string">&quot;,&quot;</span>))</span><br><span class="line"><span class="comment">#[&#x27;a&#x27;,&#x27;b&#x27;,&#x27;c&#x27;,&#x27;d&#x27;]</span></span><br><span class="line"><span class="comment">#3.限制拆分次数</span></span><br><span class="line">s=<span class="string">&quot;1-2-3-4-5&quot;</span></span><br><span class="line"><span class="built_in">print</span>(s,split(<span class="string">&quot;-&quot;</span>,<span class="number">2</span>))</span><br><span class="line"><span class="comment">#[&#x27;1&#x27;,&#x27;2&#x27;,&#x27;3-4-5&#x27;]</span></span><br></pre></td></tr></table></figure>
-<h3 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h3><p>作用：把列表&#x2F;元祖等里面的元素拼成一个字符串<br>语法：<br><code>连接符.join(可迭代对象)</code><br>返回值-&gt;新字符串<br>样例如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">lst=[<span class="string">&quot;a&quot;</span>,<span class="string">&quot;b&quot;</span>,<span class="string">&quot;c&quot;</span>]</span><br><span class="line"><span class="comment">#用逗号拼接</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;,&quot;</span>.join(lst))</span><br><span class="line"><span class="comment">#a,b,c</span></span><br><span class="line"><span class="comment">#用空格拼接</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot; &quot;</span>.join(lst))</span><br><span class="line"><span class="comment">#a b c</span></span><br><span class="line"><span class="comment">#用空字符串拼接（无缝衔接）</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>.join(lst))</span><br><span class="line"><span class="comment">#abc</span></span><br></pre></td></tr></table></figure>
+          <p>Python文件操作中常用的第三方库</p>
+<span id="more"></span>
+<h2 id="os标准库"><a href="#os标准库" class="headerlink" title="os标准库"></a>os标准库</h2><p>Python的os模块是标准库中用于与操作系统交互的核心模块，提供了文件路径、目录操作、环境变量等跨平台功能</p>
+<h3 id="1-路径操作（os-path）"><a href="#1-路径操作（os-path）" class="headerlink" title="1.路径操作（os.path）"></a>1.路径操作（os.path）</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br></pre></td></tr></table></figure>
+<h5 id="路径拼接（自动处理分隔符"><a href="#路径拼接（自动处理分隔符" class="headerlink" title="路径拼接（自动处理分隔符)"></a>路径拼接（自动处理分隔符)</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">path=os.path.join(<span class="string">&quot;folder&quot;</span>,<span class="string">&quot;subfolder&quot;</span>,<span class="string">&quot;file.txt&quot;</span>)</span><br><span class="line"><span class="comment">#windows:folder\subfolder\file.txt</span></span><br><span class="line"><span class="comment">#Linux/Mac:folder/subfolder/file.txt</span></span><br></pre></td></tr></table></figure>
+<h5 id="获取绝对路径"><a href="#获取绝对路径" class="headerlink" title="获取绝对路径"></a>获取绝对路径</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">abs_path=os.path.abspath(<span class="string">&quot;file.txt&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="路径拆分"><a href="#路径拆分" class="headerlink" title="路径拆分"></a>路径拆分</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dirname=os.path.dirname(<span class="string">&quot;/home/user/file.txt&quot;</span>) <span class="comment"># /home/user</span></span><br><span class="line">basename=os.path.basename(<span class="string">&quot;/home/user/file.txt&quot;</span>) <span class="comment"># file.txt</span></span><br><span class="line">name,ext=os.path.splitext(<span class="string">&quot;file.txt&quot;</span>) <span class="comment">#(&#x27;file&#x27;,&#x27;.txt&#x27;)</span></span><br></pre></td></tr></table></figure>
+<h5 id="路径判断"><a href="#路径判断" class="headerlink" title="路径判断"></a>路径判断</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">os.path.exists(path)  <span class="comment">#是否存在</span></span><br><span class="line">os.path.isfile(path)  <span class="comment">#是否为文件</span></span><br><span class="line">os.path.isdir(path)   <span class="comment">#是否为目录</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="2-目录操作"><a href="#2-目录操作" class="headerlink" title="2.目录操作"></a>2.目录操作</h3><h5 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a>创建目录</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">os.mkdir(<span class="string">&quot;new_folder&quot;</span>) <span class="comment">#创建单个目录</span></span><br><span class="line">os.makedirs(<span class="string">&quot;a/b/c&quot;</span>,exist_ok=<span class="literal">True</span>) <span class="comment">#递归创建（可以一次性创建路径中所有缺失的层级，父目录不存在时，会先自动帮你创建好父目录），exist_ok避免重复报错</span></span><br></pre></td></tr></table></figure>
+<h5 id="删除目录"><a href="#删除目录" class="headerlink" title="删除目录"></a>删除目录</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">os.rmdir(<span class="string">&quot;empty_folder&quot;</span>) <span class="comment">#只能删除空目录</span></span><br><span class="line">os.removedirs(<span class="string">&quot;a/b/c&quot;</span>) <span class="comment">#递归删除空目录</span></span><br></pre></td></tr></table></figure>
+<p>ps:删除空目录的意思是<strong>这个文件夹必须是完全空的</strong>（没有任何文件或子文件夹）</p>
+<h5 id="遍历目录"><a href="#遍历目录" class="headerlink" title="遍历目录"></a>遍历目录</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> os.listdir(<span class="string">&quot;.&quot;</span>):</span><br><span class="line">    <span class="built_in">print</span>(item) <span class="comment">#列出当前目录下所有文件和文件夹</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="pathlib模块"><a href="#pathlib模块" class="headerlink" title="pathlib模块"></a>pathlib模块</h2><p>pathlib是Python3.4引入的标准库模块，它用面向对象的方式处理文件系统路径，将所有路径操作封装在Path对象中，代码更简洁，更易读</p>
+<h5 id="创建路径"><a href="#创建路径" class="headerlink" title="创建路径"></a>创建路径</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line">path=Path(<span class="string">&quot;/path/to/directory&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="检查路径是否存在"><a href="#检查路径是否存在" class="headerlink" title="检查路径是否存在"></a>检查路径是否存在</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> path.exists():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Path exists&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="列出目录中的文件"><a href="#列出目录中的文件" class="headerlink" title="列出目录中的文件"></a>列出目录中的文件</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> path.iterdir():</span><br><span class="line">    <span class="built_in">print</span>(file)</span><br></pre></td></tr></table></figure>
+<h5 id="创建新文件"><a href="#创建新文件" class="headerlink" title="创建新文件"></a>创建新文件</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">new_file=path/<span class="string">&quot;new_file.txt&quot;</span></span><br><span class="line"><span class="comment">#用/运算符把目录路径和文件名拼起来，生成一个新的文件路径</span></span><br><span class="line"><span class="comment"># 结果：new_file = Path(&quot;/path/to/directory/new_file.txt&quot;)</span></span><br><span class="line">new_file.write_text(<span class="string">&quot;Hello,this is a new file&quot;</span>)</span><br><span class="line"><span class="comment">#在新文件中写入文本</span></span><br></pre></td></tr></table></figure>
+<h5 id="读取文件内容"><a href="#读取文件内容" class="headerlink" title="读取文件内容"></a>读取文件内容</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">content=new_file.read_text()</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;File Coontent:&quot;</span>,content)</span><br></pre></td></tr></table></figure>
+
+<h2 id="shutil模块"><a href="#shutil模块" class="headerlink" title="shutil模块"></a>shutil模块</h2><p><code>shutil</code>是Python标准库中的高级文件操作模块，提供了比os模块更强大、更便捷的文件和目录操作功能</p>
+<h5 id="复制文件"><a href="#复制文件" class="headerlink" title="复制文件"></a>复制文件</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line"><span class="comment">#情况1 目标是文件路径</span></span><br><span class="line"><span class="comment">#将`source.txt`复制到backup目录，并重命名为`backup.txt`</span></span><br><span class="line">shutil.copy(<span class="string">&#x27;/home/user/source.txt&#x27;</span>,<span class="string">&#x27;/home/user/backup/backup.txt&#x27;</span>)</span><br><span class="line"><span class="comment">#情况2 目标是目录路径</span></span><br><span class="line"><span class="comment">#将`source.txt`复制到`backup`目录，保持原文件名</span></span><br><span class="line">shutil.copy(<span class="string">&#x27;/home/user/source.txt&#x27;</span>,<span class="string">&#x27;/home/user/backup/&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="移动文件"><a href="#移动文件" class="headerlink" title="移动文件"></a>移动文件</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line">shutil.move(<span class="string">&#x27;/path/to/source/file&#x27;</span>,<span class="string">&#x27;/path/to/destination/file&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h5 id="递归删除目录"><a href="#递归删除目录" class="headerlink" title="递归删除目录"></a>递归删除目录</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">imoprt shutil</span><br><span class="line">shutil.rmtree(<span class="string">&#x27;/path/to/directory&#x27;</span>)</span><br></pre></td></tr></table></figure>
         
       </div>
 
@@ -350,22 +333,22 @@
   
     
 <nav id="article-nav">
-  <a class="article-nav-btn left "
-    
-      href="/2026/03/31/Python%E5%9F%BA%E7%A1%80-set%E9%9B%86%E5%90%88/"
-      title="Python基础-set集合（非重点）"
+  <a class="article-nav-btn left  disabled "
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
-      
-        Python基础-set集合（非重点）
         
     </p>
   </a>
-  <a class="article-nav-btn right  disabled "
+  <a class="article-nav-btn right "
+    
+      href="/2026/04/12/abc453%E8%A1%A5%E9%A2%98/"
+      title="abc453补题"
      >
 
     <p class="title-text">
+      
+        abc453补题
         
     </p>
     <i class="fa-solid fa-angle-right"></i>
