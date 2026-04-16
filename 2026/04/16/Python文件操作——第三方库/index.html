@@ -28,7 +28,7 @@
 <meta property="og:description" content="Python文件操作中常用的第三方库">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-04-16T11:46:27.000Z">
-<meta property="article:modified_time" content="2026-04-16T12:44:01.363Z">
+<meta property="article:modified_time" content="2026-04-16T16:00:33.686Z">
 <meta property="article:author" content="Zerohajin">
 <meta name="twitter:card" content="summary">
   
@@ -280,7 +280,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            2k 词 
+            2.7k 词 
           </div>
           
           <!-- 👇 只在文章详情页显示阅读量，首页不显示（解决错乱） -->
@@ -322,6 +322,22 @@
 <h5 id="复制文件"><a href="#复制文件" class="headerlink" title="复制文件"></a>复制文件</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line"><span class="comment">#情况1 目标是文件路径</span></span><br><span class="line"><span class="comment">#将`source.txt`复制到backup目录，并重命名为`backup.txt`</span></span><br><span class="line">shutil.copy(<span class="string">&#x27;/home/user/source.txt&#x27;</span>,<span class="string">&#x27;/home/user/backup/backup.txt&#x27;</span>)</span><br><span class="line"><span class="comment">#情况2 目标是目录路径</span></span><br><span class="line"><span class="comment">#将`source.txt`复制到`backup`目录，保持原文件名</span></span><br><span class="line">shutil.copy(<span class="string">&#x27;/home/user/source.txt&#x27;</span>,<span class="string">&#x27;/home/user/backup/&#x27;</span>)</span><br></pre></td></tr></table></figure>
 <h5 id="移动文件"><a href="#移动文件" class="headerlink" title="移动文件"></a>移动文件</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line">shutil.move(<span class="string">&#x27;/path/to/source/file&#x27;</span>,<span class="string">&#x27;/path/to/destination/file&#x27;</span>)</span><br></pre></td></tr></table></figure>
 <h5 id="递归删除目录"><a href="#递归删除目录" class="headerlink" title="递归删除目录"></a>递归删除目录</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">imoprt shutil</span><br><span class="line">shutil.rmtree(<span class="string">&#x27;/path/to/directory&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="glob模块"><a href="#glob模块" class="headerlink" title="glob模块"></a>glob模块</h2><p>glob就是用命令行通配符来检索文件路径列表的工具</p>
+<h5 id="查找匹配的文件"><a href="#查找匹配的文件" class="headerlink" title="查找匹配的文件"></a>查找匹配的文件</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> glob</span><br><span class="line"><span class="comment">#查找所有txt文件</span></span><br><span class="line">txt_files=glob.glob(<span class="string">&#x27;/path/to/directory/*.txt&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;TXT Files:&quot;</span>,txt_files)</span><br><span class="line"><span class="comment">#查找所有文件名包含“file”这个子串的文件</span></span><br><span class="line">new_files=glob.glob(<span class="string">&#x27;/path/to/directory/*file&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;New Files:&quot;</span>,new_files)</span><br></pre></td></tr></table></figure>
+
+<h2 id="io模块"><a href="#io模块" class="headerlink" title="io模块"></a>io模块</h2><p>io模块是Python标准库中用于处理输入输出的核心模块</p>
+<h5 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> io</span><br><span class="line"><span class="keyword">with</span> io.<span class="built_in">open</span>(<span class="string">&#x27;/path/to/file.txt&#x27;</span>,<span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">    content=file.read()</span><br><span class="line">    <span class="built_in">print</span>(content)</span><br></pre></td></tr></table></figure>
+<h5 id="写入文件"><a href="#写入文件" class="headerlink" title="写入文件"></a>写入文件</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> io.<span class="built_in">open</span>(<span class="string">&#x27;/path/txt&#x27;</span>,<span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(<span class="string">&quot;Hello world&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="总结：每个模块的主要作用"><a href="#总结：每个模块的主要作用" class="headerlink" title="总结：每个模块的主要作用"></a>总结：每个模块的主要作用</h2><ul>
+<li>os：操作系统交互。处理路径、重命名、删除文件、遍历目录等</li>
+<li>shutil：高级文件操作。复制、移动、压缩、解压文件和文件夹</li>
+<li>pathlib：面向对象的路径操作。将路径视为对象，代码更直观、跨平台</li>
+<li>glob：通配符匹配。按照格式查找文件</li>
+<li>io：流与内存文件处理。在内存中像操作文件一样读写文本或二进制数据</li>
+</ul>
+
         
       </div>
 
