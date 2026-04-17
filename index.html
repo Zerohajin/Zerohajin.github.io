@@ -166,6 +166,11 @@
                 算法
                 <div class="category-count">2</div>
             </a>
+        
+            <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">
+                题解
+                <div class="category-count">1</div>
+            </a>
         </div>
     </div>
   </div>
@@ -183,7 +188,7 @@
       
         <a class="archive-link" href="/archives/2026/04 ">
           四月 2026 
-          <div class="archive-count">6 </div>
+          <div class="archive-count">7 </div>
         </a>
       
         <a class="archive-link" href="/archives/2026/03 ">
@@ -201,6 +206,12 @@
     <div class="widget">
       <h3 class="widget-title">最新文章</h3>
       <ul>
+        
+          <a class="recent-link" href="/2026/04/17/%E6%B4%9B%E8%B0%B7%E9%A2%98%E5%8D%95%E7%AE%97%E6%B3%951-5-%E8%B4%AA%E5%BF%83-%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/" title="洛谷题单算法1-5 贪心 部分题解" >
+            <div class="recent-link-text">
+              洛谷题单算法1-5 贪心 部分题解
+            </div>
+          </a>
         
           <a class="recent-link" href="/2026/04/16/Python%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E2%80%94%E2%80%94%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93/" title="Python文件操作——第三方库" >
             <div class="recent-link-text">
@@ -226,12 +237,6 @@
             </div>
           </a>
         
-          <a class="recent-link" href="/2026/04/06/2024CCPC%E9%87%8D%E5%BA%86%E7%AB%99%E8%A1%A5%E9%A2%98/" title="2024CCPC重庆站补题(部分题解)" >
-            <div class="recent-link-text">
-              2024CCPC重庆站补题(部分题解)
-            </div>
-          </a>
-        
       </ul>
     </div>
   </div>
@@ -242,6 +247,82 @@
     </div>
     <div id="content-body">
       
+   
+
+
+<article id="post-洛谷题单算法1-5-贪心-部分题解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2026/04/17/%E6%B4%9B%E8%B0%B7%E9%A2%98%E5%8D%95%E7%AE%97%E6%B3%951-5-%E8%B4%AA%E5%BF%83-%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/">洛谷题单算法1-5 贪心 部分题解</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2026-04-17T03:13:26.000Z" itemprop="datePublished">2026-04-17</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            613 词 
+          </div>
+          
+          <!-- 👇 只在文章详情页显示阅读量，首页不显示（解决错乱） -->
+          
+
+        </div>
+        
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            
+              P1090 [NOIP 2004 提高组] 合并果子思路：贪心地想，要让ans最小，就要让大的数被加的次数最少，每次让最小的两个合并，再把合并完的数插到它该放的位置就可以了AC代码:
+1234567891011121314151617181920212223242526#include &lt;bits/stdc++.h&gt;using namespace std;#define int long long#define rep(i,a,b) for(int i=a;i&lt;=b;i++)signed main()&#123;    ios::sync_with_stdio(0),cin.tie(0),cout.tie(0);    int n;    cin&gt;&gt;n;    vector&lt;int&gt; a(n);    rep(i,0,n-1) cin&gt;&gt;a[i];    int ans=0;    //预处理：从小到大排序    sort(a.begin(),a.end());    while(a.size()&gt;=2)    &#12...
+            
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2026/04/17/%E6%B4%9B%E8%B0%B7%E9%A2%98%E5%8D%95%E7%AE%97%E6%B3%951-5-%E8%B4%AA%E5%BF%83-%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+
+
+
+
+
+
    
 
 
