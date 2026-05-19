@@ -14,19 +14,21 @@
   
 
   
-  <title>算法学习笔记-数位DP“ | Zero&#39;s Blog</title>
+  <title>算法学习笔记-数位DP | Zero&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="算法学习笔记-数位DP“">
+  <meta name="description" content="数位dp详解以及相关例题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法学习笔记-数位DP">
 <meta property="og:url" content="https://zerohajin.github.io/2026/05/18/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E4%BD%8DDP%E2%80%9C/index.html">
 <meta property="og:site_name" content="Zero&#39;s Blog">
+<meta property="og:description" content="数位dp详解以及相关例题">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2026-05-18T03:07:04.000Z">
-<meta property="article:modified_time" content="2026-05-18T03:07:04.678Z">
+<meta property="article:modified_time" content="2026-05-19T15:05:25.010Z">
 <meta property="article:author" content="Zerohajin">
 <meta name="twitter:card" content="summary">
   
@@ -166,7 +168,7 @@
         
             <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">
                 算法
-                <div class="category-count">3</div>
+                <div class="category-count">4</div>
             </a>
         </div>
     </div>
@@ -209,9 +211,9 @@
       <h3 class="widget-title">最新文章</h3>
       <ul>
         
-          <a class="recent-link" href="/2026/05/18/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E4%BD%8DDP%E2%80%9C/" title="算法学习笔记-数位DP“" >
+          <a class="recent-link" href="/2026/05/18/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E4%BD%8DDP%E2%80%9C/" title="算法学习笔记-数位DP" >
             <div class="recent-link-text">
-              算法学习笔记-数位DP“
+              算法学习笔记-数位DP
             </div>
           </a>
         
@@ -264,7 +266,7 @@
   
     
       <h1 class="p-name article-title" itemprop="headline name">
-        算法学习笔记-数位DP“
+        算法学习笔记-数位DP
       </h1>
     
   
@@ -277,13 +279,13 @@
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
   
-    未分类 
+  <a class="meta-cate-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
    
 </div>
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            0 词 
+            1.5k 词 
           </div>
           
           <!-- 👇 只在文章详情页显示阅读量，首页不显示（解决错乱） -->
@@ -300,7 +302,23 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          
+          <p>数位dp详解以及相关例题</p>
+<span id="more"></span>
+<p>数位dp的常见题型：<br>给定一个闭区间[L,R],求这个区间中满足”某种条件”的数的总数</p>
+<h4 id="数字大小维度"><a href="#数字大小维度" class="headerlink" title="数字大小维度"></a>数字大小维度</h4><p>首先，可以把统计[L,R]之间满足条件的数转化为求[1,N]之间满足条件的数，于是：<br><code>ans[L,R]=ans[1,R]-ans[1,L-1]</code><br>然后只需要考虑右边界就行</p>
+<h4 id="数字大小"><a href="#数字大小" class="headerlink" title="数字大小"></a>数字大小</h4><p>比如要统计[1,12345]之间满足条件的数的数量<br>首先将小于五位数的数字全部补上前导0：<br>1-&gt;00001         123-&gt;00123<br>于是一个数小于等于12345就等同于补上前导0之后的字典序小于等于12345</p>
+<h4 id="DFS求解"><a href="#DFS求解" class="headerlink" title="DFS求解"></a>DFS求解</h4><p>可以从最低位到最高位枚举所有数<br>DFS要记录的状态有：</p>
+<ul>
+<li>现在枚举到了哪一位</li>
+<li>这一位前面的数字是多少</li>
+<li>这一位可以填哪些数字<br>前两个参数很好维护，第三位参数可以这样维护(这里依旧拿12345举例)：<br>考虑最高位，可以填的是0-1<br>如果最高位填了0，后一位可以填的是0-9<br>如果最高位填了1，后面一位可以填的是0-2<br>于是我们得出以下结论：</li>
+<li>如果前面每一位都和上限数字对应的位数相同，那么这一位能填的是<code>0-上限数字所对应的位数</code></li>
+<li>如果前面的位置填了小于上限数字对应位数的数，那么这一位可以填0-9<br>于是我们可以写出下面这个代码：</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">pos:当前位数  pre_num上一个数字  </span></span><br><span class="line"><span class="comment">flag 判断是不是前面每一位都和上限数字相同</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> pos,<span class="type">int</span> pre_num,<span class="type">int</span> flag)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pos&lt;=<span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;<span class="comment">//枚举完了，就等于找到了一个符合条件的数，所以返回1</span></span><br><span class="line">    <span class="type">int</span> max_num;</span><br><span class="line">    <span class="keyword">if</span>(flag)</span><br><span class="line">    &#123;</span><br><span class="line">        max_num=num[pos];<span class="comment">//num表示右边界对应数字</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> max_num=<span class="number">9</span>;</span><br><span class="line">    <span class="type">int</span> res=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;=max_num;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">check</span>())<span class="comment">//check()表示题目中要求满足的条件</span></span><br><span class="line">        &#123;</span><br><span class="line">            res+=<span class="built_in">dfs</span>(pos<span class="number">-1</span>,i,flag&amp;&amp;(i==num[pos]));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">DFS的整体思想：</span></span><br><span class="line"><span class="comment">如果枚举完每一位了，直接返回</span></span><br><span class="line"><span class="comment">如果没有，得出这一位可以填的最大数字</span></span><br><span class="line"><span class="comment">枚举这一位数字填的是多少</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h4 id="记忆化搜索优化"><a href="#记忆化搜索优化" class="headerlink" title="记忆化搜索优化"></a>记忆化搜索优化</h4><p>上面的代码虽然可以解决问题，但是时间复杂度过高，很大一部分情况下会爆掉，于是我们要对其进行优化<br>记忆化搜索的思路很简单，只需要开一个数组记录这种情况是不是被搜索过，如果是，直接返回这个值就行了<br>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">nt <span class="title">dfs</span><span class="params">(<span class="type">int</span> pos,<span class="type">int</span> pre_num,<span class="type">int</span> flag)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(pos&lt;=<span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="comment">//注意定义数组的时候要把dp全都定义为-1</span></span><br><span class="line">    <span class="keyword">if</span>(!flag&amp;&amp;dp[pos][pre_num]!=<span class="number">-1</span>) <span class="keyword">return</span> dp[pos][pre_num];</span><br><span class="line">    <span class="comment">//注意dp存储的只是max_num=9时候的值，不然数据会混乱</span></span><br><span class="line">    <span class="type">int</span> max_num;</span><br><span class="line">    <span class="keyword">if</span>(flag)</span><br><span class="line">    &#123;</span><br><span class="line">        max_num=num[pos];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> max_num=<span class="number">9</span>;</span><br><span class="line">    <span class="type">int</span> res=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;=max_num;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">check</span>())</span><br><span class="line">        &#123;</span><br><span class="line">            res+=<span class="built_in">dfs</span>(pos<span class="number">-1</span>,i,flag&amp;&amp;(i==num[pos]));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(flag) dp[pos][pre_num]=ret;<span class="comment">//更新dp值</span></span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
         
       </div>
 
