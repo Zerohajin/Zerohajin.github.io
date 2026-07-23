@@ -14,25 +14,26 @@
   
 
   
-  <title>Python基础-文件基础操作（重点） | Zero&#39;s Blog</title>
+  <title>动态规划专项题单练习 | Zero&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="python中的文件操作">
+  <meta name="description" content="dp专项题单练习记录">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python基础-文件基础操作（重点）">
-<meta property="og:url" content="https://zerohajin.github.io/2026/04/04/Python%E5%9F%BA%E7%A1%80-%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C/index.html">
+<meta property="og:title" content="动态规划专项题单练习">
+<meta property="og:url" content="https://zerohajin.github.io/2026/07/23/DP/index.html">
 <meta property="og:site_name" content="Zero&#39;s Blog">
-<meta property="og:description" content="python中的文件操作">
+<meta property="og:description" content="dp专项题单练习记录">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://zerohajin.github.io/images/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C.jpg">
-<meta property="article:published_time" content="2026-04-04T04:30:01.000Z">
-<meta property="article:modified_time" content="2026-04-15T13:33:38.002Z">
+<meta property="article:published_time" content="2026-07-23T11:35:23.000Z">
+<meta property="article:modified_time" content="2026-07-23T14:06:46.291Z">
 <meta property="article:author" content="Zerohajin">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="题解">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://zerohajin.github.io/images/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Zero's Blog" type="application/atom+xml">
   
@@ -267,7 +268,7 @@
        
 
 
-<article id="post-Python基础-文件操作" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-DP" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   
     
    
@@ -280,7 +281,7 @@
   
     
       <h1 class="p-name article-title" itemprop="headline name">
-        Python基础-文件基础操作（重点）
+        动态规划专项题单练习
       </h1>
     
   
@@ -288,18 +289,18 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2026-04-04T04:30:01.000Z" itemprop="datePublished">2026-04-04</time>
+  <time class="dt-published" datetime="2026-07-23T11:35:23.000Z" itemprop="datePublished">2026-07-23</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
   
-  <a class="meta-cate-link" href="/categories/python%E5%9F%BA%E7%A1%80/">python基础</a>
+  <a class="meta-cate-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
    
 </div>
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            2.1k 词 
+            2k 词 
           </div>
           
           <!-- 👇 只在文章详情页显示阅读量，首页不显示（解决错乱） -->
@@ -313,121 +314,21 @@
 
         </div>
         
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%AE%97%E6%B3%95/" rel="tag">算法</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag">题解</a></li></ul>
+
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <p>python中的文件操作</p>
+          <p>dp专项题单练习记录</p>
 <span id="more"></span>
-<h2 id="打开文件：open（）"><a href="#打开文件：open（）" class="headerlink" title="打开文件：open（）"></a>打开文件：<code>open（）</code></h2><p>打开文件之后，会根据你给的mode（模式）的不同来进行不同的操作，open的参数如下：<br><strong><code>open(文件路径,mode=&quot;你要干啥&quot;,encoding=&quot;文件的编码格式&quot;)</code></strong></p>
-<h4 id="文件路径"><a href="#文件路径" class="headerlink" title="文件路径"></a>文件路径</h4><p>文件路径主要分为两种：<br>1.相对路径<br>在python中，相对路径是以<strong>当前正在运行</strong>的py文件所在的文件夹为基准的<br>常用写法：</p>
-<ul>
-<li><code>a.txt</code>表示当前文件夹下的a.txt</li>
-<li><code>./a.txt</code>和上面一样，<code>.</code>表示的就是当前目录</li>
-<li><code>../b.txt</code>表示上一级文件夹中的b.txt</li>
-<li><code>../data/c.txt</code>表示上一级的data文件夹里的c.txt</li>
-</ul>
-<p>只需要记住<code>../</code>指的是退出这个文件夹，比如下图中正在运行的是<code>py字符串.py</code>,那么<code>python序列.py</code>这个文件就可以直接表示为<code>python序列.py</code>或者<code>./python序列.py</code><br>如果要访问aaa这个文件夹里的a.py文件,就要先退出当前文件夹，然后进入a.py文件，路径就是<code>../aaa/a.py</code><br><img src="/images/%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C.jpg"><br>2.绝对路径<br>绝对路径指的是从磁盘根目录开始查找的路径，比如C盘，D盘，E盘，F盘等，比如<code>C:/sylar/xxx.txt</code></p>
-<h4 id="mode"><a href="#mode" class="headerlink" title="mode"></a>mode</h4><p>mode是字符串参数，由操作类型（<code>r/w/a/x</code>）+数据类型（<code>t/b</code>）组成的，默认值是<strong>rt（只读文本）</strong><br>1.核心操作类型(必选一个)</p>
-<table>
-<thead>
-<tr>
-<th align="center">模式</th>
-<th align="center">英文全称</th>
-<th align="center">作用</th>
-<th align="center">关键特性</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">r</td>
-<td align="center">read</td>
-<td align="center">只读</td>
-<td align="center">文件必须存在，不然会报错</td>
-</tr>
-<tr>
-<td align="center">w</td>
-<td align="center">write</td>
-<td align="center">只写</td>
-<td align="center">文件不存在就创建，存在就清空原来的所有内容</td>
-</tr>
-<tr>
-<td align="center">a</td>
-<td align="center">append</td>
-<td align="center">追加</td>
-<td align="center">文件不存在就创建，存在就写入内容到文件末尾</td>
-</tr>
-<tr>
-<td align="center">x</td>
-<td align="center">exclusive</td>
-<td align="center">独占创建</td>
-<td align="center">文件不存在就创建，存在直接报错</td>
-</tr>
-</tbody></table>
-<p>2.数据类型（可选，默认t）</p>
-<table>
-<thead>
-<tr>
-<th align="center">模式</th>
-<th align="center">英文全称</th>
-<th align="center">作用</th>
-<th align="center">适用场景</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">t</td>
-<td align="center">text</td>
-<td align="center">文本模式</td>
-<td align="center">读写字符串(文字、代码、配置文件等)</td>
-</tr>
-<tr>
-<td align="center">b</td>
-<td align="center">binary</td>
-<td align="center">二进制模式</td>
-<td align="center">读写非文本文件(图片、视频、音频、压缩包等)</td>
-</tr>
-</tbody></table>
-<h4 id="encoding"><a href="#encoding" class="headerlink" title="encoding"></a>encoding</h4><p>encoding仅在**文本模式(t)**下生效，二进制模式(b)不需要这个参数<br><strong>作用</strong>：告诉python用什么编码规则把字符和二进制互相转化，用于解决中文乱码<br>1.常用编码格式</p>
-<table>
-<thead>
-<tr>
-<th align="center">编码</th>
-<th align="center">特点</th>
-<th align="center">使用场景</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">utf-8</td>
-<td align="center">通用编码，支持全球语言</td>
-<td align="center">绝大多数文本文件</td>
-</tr>
-<tr>
-<td align="center">gbk&#x2F;gb2312</td>
-<td align="center">中文专用编码</td>
-<td align="center">Windows系统的记事本、旧中文文档</td>
-</tr>
-<tr>
-<td align="center">ascii</td>
-<td align="center">仅支持英文</td>
-<td align="center">纯英文文件</td>
-</tr>
-</tbody></table>
-<p>2.关键注意点：</p>
-<ul>
-<li><strong>读写编码必须一致</strong></li>
-<li>windows默认编码：<code>gbk</code>,MAC&#x2F;Linu默认编码：<code>utf-8</code></li>
-<li>不指定encoding时，python会用系统默认编码，建议手动指定utf-8</li>
-</ul>
-<h2 id="文件操作写法"><a href="#文件操作写法" class="headerlink" title="文件操作写法"></a>文件操作写法</h2><p>推荐用with语句，它会在代码结束后自动关闭文件，防止资源泄露</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#1.读取全部内容</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;example.txt&#x27;</span>,<span class="string">&#x27;r&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    content=f.read()</span><br><span class="line"><span class="comment">#2.按行读取（适合大型文件）</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;example.txt&#x27;</span>,<span class="string">&#x27;r&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">        <span class="built_in">print</span>(line.strip())</span><br><span class="line"><span class="comment">#3.写入(会清空原文件)</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;output.txt&#x27;</span>,<span class="string">&#x27;w&#x27;</span>,encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(<span class="string">&#x27;hello,world!\n&#x27;</span>)</span><br><span class="line">    f.writelines([<span class="string">&#x27;第一行\n&#x27;</span>,<span class="string">&#x27;第二行\n&#x27;</span>])</span><br></pre></td></tr></table></figure>
-<p><strong>关于strip()</strong>:</p>
-<ul>
-<li>line读取文件时，末尾会包含一个换行符<code>\n</code>(比如”Hello\n”)</li>
-<li>使用<code>.strip()</code>后，会得到<code>&quot;Hello&quot;()</code>(去掉了换行符)</li>
-<li>如果行首或者行尾有空格，也会一并去掉</li>
-</ul>
-<p><strong><code>.write()</code>和<code>.writelines()</code>的区别</strong>:<code>.writelines()</code>可以批量写入多个字符串</p>
-<h2 id="路径处理"><a href="#路径处理" class="headerlink" title="路径处理"></a>路径处理</h2><p>可以用<code>pathlib</code>(Python3.4+内置)，代码更清晰，跨平台兼容更好</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pathlib <span class="keyword">import</span> Path</span><br><span class="line"></span><br><span class="line"><span class="comment">#获取当前文件所在目录</span></span><br><span class="line">base_dir=Path(_file_).parent</span><br><span class="line"><span class="comment">#在_file_处填入当前Python脚本文件的路径，就能获取当前文件的父目录</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#拼接路径（Windows下自动用\，Linux/Mac下自动用/）</span></span><br><span class="line">file_path = base_dir / <span class="string">&#x27;subfolder&#x27;</span> / <span class="string">&#x27;data.txt&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 判断是否存在 / 创建文件夹</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> file_path.parent.exists():</span><br><span class="line">    file_path.parent.mkdir(parents=<span class="literal">True</span>, exist_ok=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取文本</span></span><br><span class="line">text = file_path.read_text(encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
+<h1 id="暴力dp"><a href="#暴力dp" class="headerlink" title="暴力dp"></a>暴力dp</h1><p>不考虑优化，推出方程直接AC</p>
+<h2 id="01-洛谷P1077-摆花"><a href="#01-洛谷P1077-摆花" class="headerlink" title="01 洛谷P1077 摆花"></a>01 洛谷P1077 摆花</h2><p>(题目传送门)[<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1077]">https://www.luogu.com.cn/problem/P1077]</a></p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><p>读完题目后可以发现，同一种花必须摆在一起，况且必须从小到大排列，说明方案的数量只需要考虑每种花需要摆几多，于是可以转化成背包问题<br>首先定义一个数组<code>dp[i][j]</code>,表示前i种花，一共摆j盆的方案数<br>刚开始初始化所有<code>dp[i][0]</code>为1，因为不摆任何花的话，就只有一种摆放方法<br>然后进行三层循环，第一层循环表示放到第几种花，第二层循环表示这种花放了几盆，第三层循环表示前i-1种花已经放了几盆<br><strong>关于状态转移方程</strong>：<br>状态转移方程<code>dp[i][j+k]+=dp[i-1][k]</code>,因为前i-1种花有dp[i-1][k]种摆放方案，我们之前算前i种花的时候并没有考虑到这些情况，所以现在要算进去，更新前i种花摆放方案的状态</p>
+<h4 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h4><p>注意这里k和j同时等于0的时候是要跳过的，因为这事j+k&#x3D;k,就相当于把自己又加了一次</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> rep(i,a,b) for(int i=a;i&lt;=b;i++)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n,m;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">a</span><span class="params">(n<span class="number">+1</span>)</span></span>;</span><br><span class="line">    <span class="built_in">rep</span>(i,<span class="number">1</span>,n) cin&gt;&gt;a[i];</span><br><span class="line">    <span class="type">int</span> dp[<span class="number">110</span>][<span class="number">110</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="built_in">rep</span>(i,<span class="number">0</span>,n) dp[i][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="built_in">rep</span>(i,<span class="number">1</span>,n)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">rep</span>(j,<span class="number">0</span>,a[i])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">rep</span>(k,<span class="number">0</span>,m-j)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(j==<span class="number">0</span>&amp;&amp;k==<span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">                dp[i][k+j]+=dp[i<span class="number">-1</span>][k];</span><br><span class="line">                dp[i][k+j]%=(<span class="number">1000007</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;dp[n][m]&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>),cin.<span class="built_in">tie</span>(<span class="number">0</span>),cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">solve</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="02-洛谷P3842-TJOI2007-线段"><a href="#02-洛谷P3842-TJOI2007-线段" class="headerlink" title="02 洛谷P3842 [TJOI2007] 线段"></a>02 洛谷P3842 [TJOI2007] 线段</h2><p>(题目传送门)[<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3842]">https://www.luogu.com.cn/problem/P3842]</a></p>
+<h4 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h4><p>题目的意思是：要从左上角走到右下角，但是要经过所有题目中给出的线段，又因为不能向上走，所以每一行的线段都必须在离开这一行之前走完<br>于是我们定义f[i][0]表示<strong>已经走完第i行的线段，并且停留在第i行的左端点时的最短距离</strong>，f[i][1]表示<br><strong>已经走完第i行的线段，并且停留在第i行的右端点时的最短距离</strong></p>
+<h4 id="AC代码-1"><a href="#AC代码-1" class="headerlink" title="AC代码"></a>AC代码</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> rep(i,a,b) for(int i=a;i&lt;=b;i++)</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">L</span><span class="params">(n<span class="number">+1</span>,<span class="number">0</span>)</span>,<span class="title">R</span><span class="params">(n<span class="number">+1</span>,n)</span></span>;</span><br><span class="line">    <span class="built_in">rep</span>(i,<span class="number">1</span>,n) cin&gt;&gt;L[i]&gt;&gt;R[i];</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">f</span>(n<span class="number">+1</span>,<span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(<span class="number">2</span>,<span class="number">0</span>));</span><br><span class="line">    f[<span class="number">1</span>][<span class="number">0</span>]=R[<span class="number">1</span>]+<span class="built_in">abs</span>(L[<span class="number">1</span>]-R[<span class="number">1</span>])<span class="number">-1</span>,f[<span class="number">1</span>][<span class="number">1</span>]=R[<span class="number">1</span>]<span class="number">-1</span>;</span><br><span class="line">    <span class="built_in">rep</span>(i,<span class="number">2</span>,n)</span><br><span class="line">    &#123;</span><br><span class="line">        f[i][<span class="number">0</span>]=<span class="number">1</span>+<span class="built_in">min</span>(f[i<span class="number">-1</span>][<span class="number">1</span>]+<span class="built_in">abs</span>(R[i]-L[i])+<span class="built_in">abs</span>(R[i]-R[i<span class="number">-1</span>]),f[i<span class="number">-1</span>][<span class="number">0</span>]+<span class="built_in">abs</span>(R[i]-L[i])+<span class="built_in">abs</span>(R[i]-L[i<span class="number">-1</span>]));</span><br><span class="line">        f[i][<span class="number">1</span>]=<span class="number">1</span>+<span class="built_in">min</span>(f[i<span class="number">-1</span>][<span class="number">0</span>]+<span class="built_in">abs</span>(R[i]-L[i])+<span class="built_in">abs</span>(L[i]-L[i<span class="number">-1</span>]),f[i<span class="number">-1</span>][<span class="number">1</span>]+<span class="built_in">abs</span>(R[i]-L[i])+<span class="built_in">abs</span>(L[i]-R[i<span class="number">-1</span>]));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> ans=<span class="built_in">min</span>((f[n][<span class="number">0</span>]+n-L[n]),(f[n][<span class="number">1</span>]+n-R[n]));</span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>),cin.<span class="built_in">tie</span>(<span class="number">0</span>),cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">solve</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         
       </div>
 
@@ -439,27 +340,22 @@
   
     
 <nav id="article-nav">
-  <a class="article-nav-btn left "
-    
-      href="/2026/04/06/2024CCPC%E9%87%8D%E5%BA%86%E7%AB%99%E8%A1%A5%E9%A2%98/"
-      title="2024CCPC重庆站补题(部分题解)"
+  <a class="article-nav-btn left  disabled "
      >
     <i class="fa-solid fa-angle-left"></i>
     <p class="title-text">
-      
-        2024CCPC重庆站补题(部分题解)
         
     </p>
   </a>
   <a class="article-nav-btn right "
     
-      href="/2026/03/31/Python%E5%9F%BA%E7%A1%80-set%E9%9B%86%E5%90%88/"
-      title="Python基础-set集合（非重点）"
+      href="/2026/07/22/LCA%E7%AE%97%E6%B3%95/"
+      title="LCA算法"
      >
 
     <p class="title-text">
       
-        Python基础-set集合（非重点）
+        LCA算法
         
     </p>
     <i class="fa-solid fa-angle-right"></i>
