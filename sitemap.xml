@@ -137,6 +137,13 @@
 
   
   <url>
+    <loc>https://zerohajin.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://zerohajin.github.io/tags/%E9%A2%98%E8%A7%A3/</loc>
     <lastmod>2026-08-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -145,13 +152,6 @@
   
   <url>
     <loc>https://zerohajin.github.io/tags/C/</loc>
-    <lastmod>2026-08-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://zerohajin.github.io/tags/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2026-08-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -174,14 +174,14 @@
   </url>
   
   <url>
-    <loc>https://zerohajin.github.io/categories/python%E5%9F%BA%E7%A1%80/</loc>
+    <loc>https://zerohajin.github.io/categories/%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2026-08-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://zerohajin.github.io/categories/%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://zerohajin.github.io/categories/python%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2026-08-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
