@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 
-<html theme="dark" showBanner="true" hasBanner="true" > 
+<html theme="dark" showBanner="true" hasBanner="desktop" > 
 <link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet">
 <link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet">
 <link href="https://cdn.staticfile.org/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet">
@@ -14,23 +14,28 @@
   
 
   
-  <title>Zero&#39;s Blog</title>
+  <title>CF div2 1118 题解 | Zero&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="google-site-verification: google6fd66cebe035d141.html">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Zero&#39;s Blog">
-<meta property="og:url" content="https://zerohajin.github.io/google6fd66cebe035d141.html">
+  <meta name="description" content="B2. Carrot Chopdown (Hard Version)思路和上一题的区别是这一题要求求出从1到m的所有k的答案首先我们可以定义一个suf数组，suf[i]表示长度恰好为i的胡萝卜的个数,然后再定义一个sum，表示所有胡萝卜的长度和，我们观察样例可以得到，当切割到一定次数时，所有的胡萝卜都会变为1，这时的答案就是sum然后我们可以处理suf数组，让suf[i]表示所有长度&gt;&amp;#x">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CF div2 1118 题解">
+<meta property="og:url" content="https://zerohajin.github.io/2026/09/08/CF-div2-1118%E9%A2%98%E8%A7%A3/index.html">
 <meta property="og:site_name" content="Zero&#39;s Blog">
-<meta property="og:description" content="google-site-verification: google6fd66cebe035d141.html">
+<meta property="og:description" content="B2. Carrot Chopdown (Hard Version)思路和上一题的区别是这一题要求求出从1到m的所有k的答案首先我们可以定义一个suf数组，suf[i]表示长度恰好为i的胡萝卜的个数,然后再定义一个sum，表示所有胡萝卜的长度和，我们观察样例可以得到，当切割到一定次数时，所有的胡萝卜都会变为1，这时的答案就是sum然后我们可以处理suf数组，让suf[i]表示所有长度&gt;&amp;#x">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2026-08-25T07:02:12.422Z">
-<meta property="article:modified_time" content="2026-08-25T07:02:12.422Z">
+<meta property="og:image" content="https://zerohajin.github.io/images/1118.jpg">
+<meta property="article:published_time" content="2026-09-08T08:28:10.000Z">
+<meta property="article:modified_time" content="2026-09-08T14:27:39.838Z">
 <meta property="article:author" content="Zerohajin">
+<meta property="article:tag" content="C++">
+<meta property="article:tag" content="codefroce">
+<meta property="article:tag" content="题解">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zerohajin.github.io/images/1118.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Zero's Blog" type="application/atom+xml">
   
@@ -275,7 +280,19 @@
        
 
 
-<article id="page-" class="h-entry article article-type-page" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+<article id="post-CF-div2-1118题解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  
+    
+<div class="article-gallery">
+  <div class="article-gallery-photos">
+    
+      <a class="article-gallery-img" rel="gallery_cuidIYCVt9xqs2FjJX1zG5PFC">
+        <img src="/images/1118.jpg" itemprop="image">
+      </a>
+    
+  </div>
+</div>
+
    
   <div class="article-inner">
     <div class="article-main">
@@ -286,7 +303,7 @@
   
     
       <h1 class="p-name article-title" itemprop="headline name">
-        无标题
+        CF div2 1118 题解
       </h1>
     
   
@@ -294,18 +311,18 @@
 
         <div class='meta-info-bar'>
           <div class="meta-info">
-  <time class="dt-published" datetime="2026-08-25T07:02:12.422Z" itemprop="datePublished">2026-08-25</time>
+  <time class="dt-published" datetime="2026-09-08T08:28:10.000Z" itemprop="datePublished">2026-09-08</time>
 </div>
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
   
-    未分类 
+  <a class="meta-cate-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
    
 </div>
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            52 词 
+            1.8k 词 
           </div>
           
           <!-- 👇 只在文章详情页显示阅读量，首页不显示（解决错乱） -->
@@ -319,10 +336,17 @@
 
         </div>
         
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/" rel="tag">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/codefroce/" rel="tag">codefroce</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag">题解</a></li></ul>
+
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          google-site-verification: google6fd66cebe035d141.html
+          <h2 id="B2-Carrot-Chopdown-Hard-Version"><a href="#B2-Carrot-Chopdown-Hard-Version" class="headerlink" title="B2. Carrot Chopdown (Hard Version)"></a>B2. Carrot Chopdown (Hard Version)</h2><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>和上一题的区别是这一题要求求出从1到m的所有k的答案<br>首先我们可以定义一个suf数组，suf[i]表示<code>长度恰好为i的胡萝卜的个数</code>,然后再定义一个sum，表示所有胡萝卜的长度和，我们观察样例可以得到，当切割到一定次数时，所有的胡萝卜都会变为1，这时的答案就是sum<br>然后我们可以处理suf数组，让suf[i]表示所有长度&gt;&#x3D;i的胡萝卜的个数（类似前缀和）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">repd</span>(i,m,<span class="number">1</span>)</span><br><span class="line">&#123;</span><br><span class="line">    suf[i<span class="number">-1</span>]+=suf[i];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后就是计算答案，我们可以从1到m枚举k，然后定义一个整数<code>power</code>,表示<code>2^(k)</code>,因为我们发现，如果一根胡萝卜的长度<code>小于等于2的k次方</code>，那么我们一定可以用最多k次操作吧它全部切成1<br>所以刚开始可以先设一个特判，如果m（最长的胡萝卜长度）&lt;&#x3D;power,那么所有的胡萝卜都能被切成1，答案就是sum</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(power&gt;=m) ans=sum;</span><br></pre></td></tr></table></figure>
+<p>然后我们发现，如果要把一根胡萝卜分解出最多的x的话<br>，胡萝卜的长度最少为<code>power*x</code>,又因为胡萝卜的长度&lt;&#x3D;m,所以power<em>x&lt;&#x3D;m,所以<code>x&lt;=m/power</code>,所以直接从1到m&#x2F;power枚举x就可以了，枚举每个可能的x值（x表示把每根胡萝卜都切成最多的x）<br>然后设置一个变量now，临时存储答案<br>然后枚举切割出来的第1根，第2根……第power-1根长度为x的胡萝卜，看看有多少胡萝卜能贡献这一根<br>最后再考虑一下特殊情况，因为我们j只枚举到power-1.因为如果长度不是刚刚好等于power</em>x的话，最多只能切成power-1根，所以我们需要考虑一下<code>=power*</code>x的特殊情况</p>
+<h3 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> rep(i,a,b) for(int i=a;i&lt;=b;i++)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> repd(i,a,b) for(int i=a;i&gt;=b;i--)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n,m;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">a</span><span class="params">(n<span class="number">+1</span>)</span></span>;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">suf</span><span class="params">(m<span class="number">+2</span>,<span class="number">0</span>)</span></span>;</span><br><span class="line">    <span class="type">int</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">rep</span>(i,<span class="number">1</span>,n)</span><br><span class="line">    &#123;</span><br><span class="line">        cin&gt;&gt;a[i];</span><br><span class="line">        suf[a[i]]++;</span><br><span class="line">        sum+=a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">repd</span>(i,m,<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        suf[i<span class="number">-1</span>]+=suf[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">rep</span>(k,<span class="number">1</span>,m)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//防越界</span></span><br><span class="line">        <span class="keyword">if</span> (k &gt;= <span class="number">30</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; sum &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> power=(<span class="number">1LL</span>&lt;&lt;k);</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(power&gt;=m) ans=sum;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">rep</span>(x,<span class="number">1</span>,m/power)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="type">int</span> now=<span class="number">0</span>;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">1</span>;j&lt;power&amp;&amp;x*j&lt;=m;j++)</span><br><span class="line">                &#123;</span><br><span class="line">                    now+=suf[x*j];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(x*power&lt;=m)</span><br><span class="line">                &#123;</span><br><span class="line">                    now+=suf[x*power]-suf[x*power<span class="number">+1</span>];</span><br><span class="line">                &#125;</span><br><span class="line">                ans=<span class="built_in">max</span>(ans,now);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;ans&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="number">0</span>),cin.<span class="built_in">tie</span>(<span class="number">0</span>),cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    <span class="type">int</span> _;</span><br><span class="line">    cin&gt;&gt;_;</span><br><span class="line">    <span class="keyword">while</span>(_--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">solve</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         
       </div>
 
@@ -333,6 +357,29 @@
   </div>
   
     
+<nav id="article-nav">
+  <a class="article-nav-btn left  disabled "
+     >
+    <i class="fa-solid fa-angle-left"></i>
+    <p class="title-text">
+        
+    </p>
+  </a>
+  <a class="article-nav-btn right "
+    
+      href="/2026/08/18/abc471%E9%A2%98%E8%A7%A3/"
+      title="abc471题解"
+     >
+
+    <p class="title-text">
+      
+        abc471题解
+        
+    </p>
+    <i class="fa-solid fa-angle-right"></i>
+  </a>
+</nav>
+
 
   
 </article>
