@@ -152,6 +152,11 @@
     <div class="widget">
       <h3 class="widget-title">分类</h3>
       <div class="category-box">
+            <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">
+                题解
+                <div class="category-count">5</div>
+            </a>
+        
             <a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">
                 算法
                 <div class="category-count">4</div>
@@ -160,11 +165,6 @@
             <a class="category-link" href="/categories/python%E5%9F%BA%E7%A1%80/">
                 python基础
                 <div class="category-count">4</div>
-            </a>
-        
-            <a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">
-                题解
-                <div class="category-count">5</div>
             </a>
         </div>
     </div>
@@ -302,7 +302,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            1.8k 词 
+            3.1k 词 
           </div>
           
           <!-- 👇 只在文章详情页显示阅读量，首页不显示（解决错乱） -->
@@ -315,15 +315,7 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <div class="truncate-text">
-            
-              B2. Carrot Chopdown (Hard Version)思路和上一题的区别是这一题要求求出从1到m的所有k的答案首先我们可以定义一个suf数组，suf[i]表示长度恰好为i的胡萝卜的个数,然后再定义一个sum，表示所有胡萝卜的长度和，我们观察样例可以得到，当切割到一定次数时，所有的胡萝卜都会变为1，这时的答案就是sum然后我们可以处理suf数组，让suf[i]表示所有长度&gt;&#x3D;i的胡萝卜的个数（类似前缀和）
-1234repd(i,m,1)&#123;    suf[i-1]+=suf[i];&#125;
-然后就是计算答案，我们可以从1到m枚举k，然后定义一个整数power,表示2^(k),因为我们发现，如果一根胡萝卜的长度小于等于2的k次方，那么我们一定可以用最多k次操作吧它全部切成1所以刚开始可以先设一个特判，如果m（最长的胡萝卜长度）&lt;&#x3D;power,那么所有的胡萝卜都能被切成1，答案就是sum
-1if(power&gt;=m) ans=sum;
-然后我们发现，如果要把一根胡萝卜分解出最多的x的话，胡萝卜的长度最少为power*x,又因...
-            
-          </div>
+          <p>cf div2 1118题解</p>
         
       </div>
 

@@ -20,6 +20,6 @@ https://zerohajin.github.io/tags/%E9%A2%98%E8%A7%A3/
 https://zerohajin.github.io/tags/codefroce/
 https://zerohajin.github.io/tags/%E7%AE%97%E6%B3%95/
 https://zerohajin.github.io/tags/abc/
+https://zerohajin.github.io/categories/%E9%A2%98%E8%A7%A3/
 https://zerohajin.github.io/categories/%E7%AE%97%E6%B3%95/
 https://zerohajin.github.io/categories/python%E5%9F%BA%E7%A1%80/
-https://zerohajin.github.io/categories/%E9%A2%98%E8%A7%A3/
