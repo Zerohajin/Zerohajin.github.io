@@ -1,3 +1,4 @@
+https://zerohajin.github.io/2026/10/01/2023ICPC%E5%8C%BA%E5%9F%9F%E8%B5%9B-%E8%A5%BF%E5%AE%89%E7%AB%99-%E8%A1%A5%E9%A2%98/
 https://zerohajin.github.io/2026/09/08/CF-div2-1118%E9%A2%98%E8%A7%A3/
 https://zerohajin.github.io/google6fd66cebe035d141.html
 https://zerohajin.github.io/2026/08/18/abc471%E9%A2%98%E8%A7%A3/
@@ -15,10 +16,11 @@ https://zerohajin.github.io/2026/03/29/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%A
 https://zerohajin.github.io/2026/03/31/Python%E5%9F%BA%E7%A1%80-set%E9%9B%86%E5%90%88/
 https://zerohajin.github.io/hello-world/index.html
 https://zerohajin.github.io/
-https://zerohajin.github.io/tags/C/
 https://zerohajin.github.io/tags/%E9%A2%98%E8%A7%A3/
-https://zerohajin.github.io/tags/codefroce/
+https://zerohajin.github.io/tags/C/
+https://zerohajin.github.io/tags/ICPC/
 https://zerohajin.github.io/tags/%E7%AE%97%E6%B3%95/
+https://zerohajin.github.io/tags/codefroce/
 https://zerohajin.github.io/tags/abc/
 https://zerohajin.github.io/categories/%E9%A2%98%E8%A7%A3/
 https://zerohajin.github.io/categories/%E7%AE%97%E6%B3%95/
